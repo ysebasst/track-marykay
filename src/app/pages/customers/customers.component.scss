@@ -1,0 +1,31 @@
+.customers {
+  padding: 0 1.5rem;
+}
+
+.customer-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-left: 0;
+  margin: .5rem 0;
+}
+
+.customer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem;
+  list-style-type: none;
+  box-shadow: 1px 1px 2px 2px #00000020;
+  border-radius: .25rem;
+
+  & div:first-child {
+    flex-grow: 1;
+  }
+}
+
+.customer-info {
+  text-decoration: none;
+  color: inherit;
+}

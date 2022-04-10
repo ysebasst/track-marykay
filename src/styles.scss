@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root{
+  --white: #FFFFFF;
+  --black: #111111;
+  --light: #EEEEEE;
+  --dark: #333333;
+  --very-light-pink: #FEE3EC;
+  --light-pink: #F9C5D5;
+  --pink: #F999B7;
+  --dark-pink: #F2789F;
+  --box-shadow: 1px 1px 2px 2px #00000020;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1110px;
+  box-sizing: content-box;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .25rem;
+}
+
+.button {
+  display: inline-block;
+  padding: .5rem;
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--light-pink);
+  color: var(--white);
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+  outline: none;
+  
+  &--edit {
+    background-color: rgb(255, 184, 52);
+  }
+
+  &--delete {
+    background-color: rgb(255, 52, 52);
+  }
+}

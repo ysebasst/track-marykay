@@ -1,0 +1,75 @@
+<section class="customer-form container">
+  <form
+    class="form"
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)"
+    novalidate
+    autocomplete="off"
+  >
+    <div class="form-group">
+      <input
+        class="input"
+        type="text"
+        name="name"
+        placeholder="Nombre"
+        ngModel
+        autofocus
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="input"
+        type="text"
+        name="lastname"
+        placeholder="Apellidos"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="input"
+        type="email"
+        name="email"
+        placeholder="Correo"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="input"
+        type="number"
+        name="age"
+        placeholder="Edad"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="input"
+        type="text"
+        name="phone_number"
+        placeholder="Celular"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="input"
+        type="text"
+        name="city"
+        placeholder="Ciudad"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="input"
+        type="text"
+        name="address"
+        placeholder="Dirección"
+        ngModel
+      />
+    </div>
+    <button class="button" type="submit">Crear cliente</button>
+  </form>
+</section>

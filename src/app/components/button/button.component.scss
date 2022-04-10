@@ -1,0 +1,14 @@
+.button {
+  display: inline-block;
+  padding: .5rem;
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--light-pink);
+  color: var(--white);
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+  outline: none;
+}

@@ -1,0 +1,23 @@
+<section class="customers container">
+  <h1 class="main-title">Clientes</h1>
+  <a class="button" routerLink="/customers/new">Nuevo cliente</a>
+  <ul class="customer-list" *ngIf="customers$ | async as customers">
+    <li
+      class="customer-item"
+      *ngFor="let customer of customers"
+      (click)="redirectToDetail($event, customer)"
+    >
+      <div>{{ customer.name }} {{ customer.lastname }}</div>
+      <div>{{ customer.phone_number }}</div>
+      <div class="button-group">
+        <button class="button button--edit">🖊</button>
+        <button
+          class="button button--delete"
+          (click)="deleteCustomer(customer)"
+        >
+          🗑
+        </button>
+      </div>
+    </li>
+  </ul>
+</section>
