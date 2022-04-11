@@ -29,3 +29,12 @@
   text-decoration: none;
   color: inherit;
 }
+
+.input {
+  margin-top: .5rem;
+  padding: .5rem;
+  width: 100%;
+  border: none;
+  border-radius: .25rem;
+  box-shadow: var(--box-shadow);
+}

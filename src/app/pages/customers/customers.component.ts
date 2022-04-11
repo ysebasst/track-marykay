@@ -11,6 +11,8 @@ import { ICustomer } from 'src/types/Customer';
 })
 export class CustomersComponent implements OnInit {
   customers$: Observable<ICustomer[]>;
+  searchText = '';
+
   constructor(
     private customerService: CustomerService,
     private router: Router

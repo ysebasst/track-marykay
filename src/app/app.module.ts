@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CustomerFormComponent } from './pages/customer-form/customer-form.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CustomerComponent } from './pages/customer/customer.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
     CustomerFormComponent,
     ButtonComponent,
     CustomerComponent,
+    FilterPipe,
   ],
   imports: [
     RouterModule.forRoot(routes),

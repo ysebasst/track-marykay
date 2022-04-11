@@ -1,1 +1,12 @@
-<pre>{{ customer | json }}</pre>
+<section class="customer-detail container">
+  <article>
+    <h2>{{ customer.name }}</h2>
+    <p><span>Fecha de cumpleaños: </span>{{ customer.date_of_birth }}</p>
+    <p><span>Genero: </span>{{ customer.gender }}</p>
+    <p><span>Correo: </span>{{ customer.email }}</p>
+    <p><span>Celular: </span>{{ customer.phone_number }}</p>
+    <p><span>Hora de contacto: </span>{{ customer.contact_time }}</p>
+    <p><span>Ciudad: </span>{{ customer.city }}</p>
+    <p><span>Dirección: </span>{{ customer.address }}</p>
+  </article>
+</section>
