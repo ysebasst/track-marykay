@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, UrlTree, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
 import { ICustomer } from 'src/types/Customer';
+import { getAge } from 'src/utils/date';
 
 @Component({
   selector: 'app-customer',
@@ -20,8 +21,11 @@ export class CustomerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.customerService.get(this.id).subscribe((response) => {
-      this.customer = response;
+    this.customerService.get(this.id).subscribe((response: any) => {
+      this.customer = {
+        ...response,
+        age: getAge(response.date_of_birth),
+      };
     });
   }
 }
