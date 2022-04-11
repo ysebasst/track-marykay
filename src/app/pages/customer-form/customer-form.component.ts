@@ -11,8 +11,10 @@ import { ContactTime, Gender, ICustomer } from 'src/types/Customer';
 })
 export class CustomerFormComponent implements OnInit {
   customer: ICustomer = {};
-  gender = Gender;
-  contactTime = ContactTime;
+  genders = Object.values(Gender);
+  contactTime = Object.values(ContactTime);
+  initialGender = this.genders[0];
+  initialContactTime = this.contactTime[0];
 
   constructor(
     private customerService: CustomerService,
@@ -22,11 +24,12 @@ export class CustomerFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
-    this.customer = form.value;
-    console.log(this.customer);
-    this.customerService.create(this.customer).subscribe((response) => {
-      console.log(response);
-      this.router.navigate(['/customers']);
-    });
+    console.log(form.value);
+    // this.customer = form.value;
+    // console.log(this.customer);
+    // this.customerService.create(this.customer).subscribe((response) => {
+    //   console.log(response);
+    //   this.router.navigate(['/customers']);
+    // });
   }
 }

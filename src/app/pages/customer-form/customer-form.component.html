@@ -30,12 +30,14 @@
     </div>
     <div class="form-group">
       <label for="gender">Genero:</label>
-      <select class="input" name="gender" id="gender">
-        <option [value]="gender.WOMAN">
-          {{ gender.WOMAN }}
-        </option>
-        <option [value]="gender.MAN">
-          {{ gender.MAN }}
+      <select
+        class="input"
+        name="gender"
+        id="gender"
+        [(ngModel)]="initialGender"
+      >
+        <option *ngFor="let gender of genders" [value]="gender">
+          {{ gender }}
         </option>
       </select>
     </div>
@@ -55,15 +57,14 @@
     </div>
     <div class="form-group">
       <label for="contact_time">Hora de contacto:</label>
-      <select class="input" name="contact_time" id="contact_time">
-        <option [value]="contactTime.MORNING">
-          {{ contactTime.MORNING }}
-        </option>
-        <option [value]="contactTime.AFTERNOON">
-          {{ contactTime.AFTERNOON }}
-        </option>
-        <option [value]="contactTime.NIGHT">
-          {{ contactTime.NIGHT }}
+      <select
+        class="input"
+        name="contact_time"
+        id="contact_time"
+        [(ngModel)]="initialContactTime"
+      >
+        <option *ngFor="let time of contactTime" [value]="time">
+          {{ time }}
         </option>
       </select>
     </div>

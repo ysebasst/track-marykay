@@ -1,6 +1,6 @@
 export enum Gender {
-  MAN = 'Hombre',
   WOMAN = 'Mujer',
+  MAN = 'Hombre',
 }
 
 export enum ContactTime {
