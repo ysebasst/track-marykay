@@ -8,7 +8,7 @@ export const getAge = (dateOfBirth: string) => {
 
   yearDiff = monthDiff < 0 ? yearDiff - 1 : yearDiff;
 
-  if (monthDiff === 0 && dayDiff < 0) {
+  if (yearDiff === 0 && monthDiff === 0 && dayDiff < 0) {
     yearDiff--;
   }
 
