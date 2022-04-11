@@ -24,12 +24,11 @@ export class CustomerFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
-    // this.customer = form.value;
-    // console.log(this.customer);
-    // this.customerService.create(this.customer).subscribe((response) => {
-    //   console.log(response);
-    //   this.router.navigate(['/customers']);
-    // });
+    this.customer = form.value;
+    console.log(this.customer);
+    this.customerService.create(this.customer).subscribe((response) => {
+      console.log(response);
+      this.router.navigate(['/customers']);
+    });
   }
 }
