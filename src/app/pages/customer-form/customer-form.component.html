@@ -6,60 +6,84 @@
     novalidate
     autocomplete="off"
   >
+    <h2 class="form-title">Nuevo cliente</h2>
     <div class="form-group">
+      <label for="name">Nombre:</label>
       <input
         class="input"
         type="text"
         name="name"
-        placeholder="Nombre"
+        id="name"
         ngModel
         autofocus
       />
     </div>
     <div class="form-group">
+      <label for="date_of_birth">Fecha de cumpleaños:</label>
       <input
         class="input"
-        type="email"
-        name="email"
-        placeholder="Correo"
+        type="date"
+        name="date_of_birth"
+        id="date_of_birth"
         ngModel
       />
     </div>
     <div class="form-group">
-      <input
-        class="input"
-        type="number"
-        name="age"
-        placeholder="Edad"
-        ngModel
-      />
+      <label>Genero:</label>
+      <div>
+        <label [for]="gender.MAN">{{ gender.MAN }}:</label>
+        <input
+          type="radio"
+          name="gender"
+          [value]="gender.MAN"
+          [id]="gender.MAN"
+          ngModel
+        />
+        <label [for]="gender.WOMAN">{{ gender.WOMAN }}:</label>
+        <input
+          type="radio"
+          name="gender"
+          [value]="gender.WOMAN"
+          [id]="gender.WOMAN"
+          ngModel
+        />
+      </div>
     </div>
     <div class="form-group">
+      <label for="email">Correo:</label>
+      <input class="input" type="email" name="email" ngModel />
+    </div>
+    <div class="form-group">
+      <label for="phone_number">Celular:</label>
       <input
         class="input"
         type="text"
         name="phone_number"
-        placeholder="Celular"
+        id="phone_number"
         ngModel
       />
     </div>
     <div class="form-group">
-      <input
-        class="input"
-        type="text"
-        name="city"
-        placeholder="Ciudad"
-        ngModel
-      />
+      <label for="contact_time">Hora de contacto:</label>
+      <select class="input" name="contact_time" id="contact_time">
+        <option [value]="contactTime.MORNING">
+          {{ contactTime.MORNING }}
+        </option>
+        <option [value]="contactTime.AFTERNOON">
+          {{ contactTime.AFTERNOON }}
+        </option>
+        <option [value]="contactTime.NIGHT">
+          {{ contactTime.NIGHT }}
+        </option>
+      </select>
     </div>
     <div class="form-group">
-      <input
-        class="input"
-        type="text"
-        name="address"
-        placeholder="Dirección"
-        ngModel
-      />
+      <label for="city">Ciudad:</label>
+      <input class="input" type="text" name="city" id="city" ngModel />
+    </div>
+    <div class="form-group">
+      <label for="address">Dirección:</label>
+      <input class="input" type="text" name="address" ngModel />
     </div>
     <button class="button" type="submit">Crear cliente</button>
   </form>
