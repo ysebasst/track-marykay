@@ -38,3 +38,7 @@
   border-radius: .25rem;
   box-shadow: var(--box-shadow);
 }
+
+svg {
+  pointer-events: none;
+}
