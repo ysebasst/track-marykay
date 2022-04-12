@@ -46,6 +46,14 @@ export class CustomerService {
     );
   }
 
+  update(customer: ICustomer) {
+    return this.http.put(
+      `${this.API_URL}/api/customers/${customer._id}`,
+      customer,
+      this.headers
+    );
+  }
+
   delete(customer: ICustomer) {
     return this.http.delete(
       `${this.API_URL}/api/customers/${customer._id}`,

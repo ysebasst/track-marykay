@@ -16,7 +16,7 @@
       <div>{{ customer.name }}</div>
       <div>{{ customer.phone_number }}</div>
       <div class="button-group">
-        <button class="button button--edit">
+        <button class="button button--edit" (click)="goToEdit(customer)">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

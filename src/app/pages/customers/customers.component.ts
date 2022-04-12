@@ -32,6 +32,10 @@ export class CustomersComponent implements OnInit {
     }
   }
 
+  goToEdit(customer: ICustomer) {
+    this.router.navigate([`/customers/edit/${customer._id}`]);
+  }
+
   deleteCustomer(customer: ICustomer) {
     if (confirm('¿Estas seguro de querer eliminar el cliente?')) {
       this.customerService.delete(customer).subscribe((response: ICustomer) => {

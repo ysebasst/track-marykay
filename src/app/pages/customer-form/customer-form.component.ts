@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
 import { ContactTime, Gender, ICustomer } from 'src/types/Customer';
 
@@ -10,25 +10,54 @@ import { ContactTime, Gender, ICustomer } from 'src/types/Customer';
   styleUrls: ['./customer-form.component.scss'],
 })
 export class CustomerFormComponent implements OnInit {
+  id: string;
   customer: ICustomer = {};
   genders = Object.values(Gender);
   contactTime = Object.values(ContactTime);
-  initialGender = this.genders[0];
-  initialContactTime = this.contactTime[0];
+
+  title: string;
+  textButton: string;
+  isEditing: boolean;
 
   constructor(
     private customerService: CustomerService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.id = this.activatedRoute.snapshot.params['id'];
+    this.customer = {
+      name: '',
+      date_of_birth: '',
+      gender: this.genders[0],
+      email: '',
+      phone_number: '',
+      contact_time: this.contactTime[0],
+      city: '',
+      address: '',
+    };
+    this.title = this.id ? 'Editar cliente' : 'Nuevo cliente';
+    this.textButton = this.id ? 'Editar cliente' : 'Crear cliente';
+    this.isEditing = this.id ? true : false;
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.id) {
+      this.customerService.get(this.id).subscribe((reponse) => {
+        this.customer = reponse;
+      });
+    }
+  }
 
   onSubmit(form: NgForm) {
-    this.customer = form.value;
-    console.log(this.customer);
-    this.customerService.create(this.customer).subscribe((response) => {
-      console.log(response);
-      this.router.navigate(['/customers']);
-    });
+    this.customer = { ...this.customer, ...form.value };
+    if (this.isEditing) {
+      this.customerService.update(this.customer).subscribe((response) => {
+        this.router.navigate(['/customers']);
+      });
+    } else {
+      this.customerService.create(this.customer).subscribe((response) => {
+        this.router.navigate(['/customers']);
+      });
+    }
   }
 }
